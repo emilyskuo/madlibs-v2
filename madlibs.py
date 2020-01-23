@@ -61,20 +61,19 @@ def show_madlib():
     person = request.args.get("person")
     adjective = request.args.get("adjective")
     noun_2 = request.args.get("noun_2")
-    run = request.args.get("run")
-    jump = request.args.get("jump")
-    wrap = request.args.get("wrap")
-    sing = request.args.get("sing")
-    # verbs = [run, jump, wrap, sing]
-    # print(verbs)
+    noun_3 = request.args.get("noun_3")
+    verb_list = request.args.getlist("verb")
+    verb = choice(verb_list)
+
 
     return render_template("madlib.html",
                             color=color,
                             noun=noun,
                             person=person,
                             adjective=adjective,
-                            noun_2 =noun_2,)
-                            # verbs=verb)
+                            noun_2 =noun_2,
+                            verb=verb,
+                            noun_3 =noun_3)
 
 if __name__ == '__main__':
     # Setting debug=True gives us error messages in the browser and also
